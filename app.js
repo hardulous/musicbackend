@@ -4,12 +4,14 @@ const bodyParser = require("body-parser");
 const expressValidator = require("express-validator");
 const mongoose = require('mongoose');
 const userRoutes = require('./Routes/UserRoute.js')
+const uploadRoutes = require("./Routes/UploadRoute.js")
 const CONNECTION_URL = "mongodb://localhost:27017"
 
 app.use([bodyParser.json(),bodyParser.urlencoded({extended:true}),expressValidator()])
 
 // ROUTES
 app.use("/user",userRoutes);
+app.use("/upload",uploadRoutes);
 
 // DATABASE
 mongoose.connect(CONNECTION_URL).then(()=>{

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-
-const upload = new mongoose.Schema({
+const UploadAudio = new mongoose.Schema({
     
     uploadBy:{
         type:mongoose.Schema.Types.ObjectId, 
@@ -8,12 +7,10 @@ const upload = new mongoose.Schema({
         required:true,
     },
 
-    uploaded:{
+    media:{
         data:Buffer,
         contentType:String,
     },
-    
-    
 })
 
-module.exports = mongoose.model("Upload",upload);
+module.exports = mongoose.model("UploadAudio",UploadAudio);
